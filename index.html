@@ -428,7 +428,7 @@
       </div>
     </div>
 
-    <!-- Página 6: Rompecabezas -->
+    <!-- Página 6: Rompecabezas Cuadrado 3x3 -->
     <div class="page" id="page6">
       <h2 class="page-title">Arma el recuerdo</h2>
       <p style="text-align:center; font-size:0.95rem; color:#d17a9a; margin-bottom:12px;">
@@ -436,11 +436,12 @@
       </p>
       <div id="puzzle-container" style="
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 4px;
         width: 100%;
-        max-width: 340px;
+        max-width: 300px;
         margin: 0 auto;
+        aspect-ratio: 1 / 1;
         background: #fff0f5;
         padding: 8px;
         border-radius: 16px;
@@ -597,29 +598,34 @@
       if (e.key === 'Enter') unlockBtn.click();
     });
 
-    // Rompecabezas
+    // Rompecabezas 3x3 (cuadrado)
     function initPuzzle() {
       const container = document.getElementById('puzzle-container');
       if (!container || container.children.length > 0) return;
 
       const imageSrc = 'nosotros1.jpg';
-      const cols = 5;
+      const cols = 3;
+      const rows = 3;
+      const totalPieces = 9;
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < totalPieces; i++) {
         const piece = document.createElement('div');
         piece.className = 'puzzle-piece';
         piece.draggable = true;
         piece.dataset.index = i;
 
-        const x = (i % cols) * 20;
-        const y = Math.floor(i / cols) * 50;
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+
+        const posX = col * (100 / (cols - 1));
+        const posY = row * (100 / (rows - 1));
 
         piece.style.cssText = `
           width: 100%;
           aspect-ratio: 1;
           background-image: url('${imageSrc}');
-          background-size: 500% 200%;
-          background-position: ${x}% ${y}%;
+          background-size: ${cols * 100}% ${rows * 100}%;
+          background-position: ${posX}% ${posY}%;
           border-radius: 8px;
           cursor: grab;
           border: 2px solid white;
@@ -627,6 +633,7 @@
         container.appendChild(piece);
       }
 
+      // Mezclar
       for (let i = container.children.length; i >= 0; i--) {
         container.appendChild(container.children[Math.random() * i | 0]);
       }
@@ -671,11 +678,11 @@
       const status = document.getElementById('puzzle-status');
       if (status) status.textContent = correct ? '¡Lo lograste! 💕' : '';
     }
-// Nota de voz
+
+    // Nota de voz
     const voiceNote = document.getElementById('voiceNote');
     const playVoiceBtn = document.getElementById('playVoiceBtn');
     const rewindBtn = document.getElementById('rewindBtn');
-    const forwardBtn = document.getElementById('forwardBtn');
     const voiceTime = document.getElementById('voiceTime');
     let isVoicePlaying = false;
 
@@ -737,4 +744,3 @@
   </script>
 </body>
 </html>
- 
