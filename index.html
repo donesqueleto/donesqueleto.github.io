@@ -15,20 +15,20 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(180deg, #fff8e7 0%, #fff0d6 50%, #ffe8c8 100%);
+      background: linear-gradient(180deg, #fff0f5 0%, #ffe4ec 50%, #ffd6e7 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow-x: hidden;
-      color: #8b5e3c;
+      color: #9b4b6c;
     }
 
     .cloud {
       position: fixed;
-      background: #fff5e0;
+      background: #ffe6f0;
       border-radius: 50%;
-      opacity: 0.8;
+      opacity: 0.7;
       filter: blur(1px);
       z-index: 0;
       animation: float 18s infinite ease-in-out;
@@ -36,7 +36,7 @@
     .cloud::before, .cloud::after {
       content: '';
       position: absolute;
-      background: #fff5e0;
+      background: #ffe6f0;
       border-radius: 50%;
     }
 
@@ -64,7 +64,7 @@
       max-height: 780px;
       background: white;
       border-radius: 30px;
-      box-shadow: 0 20px 50px rgba(200, 140, 80, 0.2);
+      box-shadow: 0 20px 50px rgba(200, 100, 140, 0.2);
       position: relative;
       overflow: hidden;
       z-index: 10;
@@ -85,7 +85,7 @@
       pointer-events: none;
       transition: opacity 0.6s ease, transform 0.6s ease;
       transform: translateX(30px);
-      background: linear-gradient(180deg, #fffaf0 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #fff5f8 0%, #ffffff 100%);
     }
 
     .page.active {
@@ -97,149 +97,108 @@
     .cover {
       text-align: center;
       justify-content: center;
-      background: linear-gradient(180deg, #fff8e7 0%, #fffaf0 100%);
+      background: linear-gradient(180deg, #fff0f5 0%, #fff5f8 100%);
     }
 
     .cover h1 {
       font-family: 'Pacifico', cursive;
       font-size: 2.5rem;
-      color: #e67e22;
+      color: #e91e63;
       margin-bottom: 8px;
-      text-shadow: 0 2px 8px rgba(230, 126, 34, 0.2);
     }
 
     .cover .subtitle {
       font-size: 1.1rem;
-      color: #d4a373;
+      color: #d17a9a;
       margin-bottom: 25px;
     }
 
-    /* Pollito */
-    .chick {
-      width: 180px;
+    /* ===== ROSA ===== */
+    .rose {
+      width: 160px;
       height: 180px;
       margin: 0 auto 20px;
       position: relative;
     }
 
-    .chick-body {
+    .rose-flower {
       width: 110px;
-      height: 100px;
-      background: #ffe566;
-      border-radius: 50% 50% 45% 45%;
+      height: 110px;
+      background: #ff5c8a;
+      border-radius: 50%;
       position: absolute;
-      bottom: 25px;
+      top: 10px;
       left: 50%;
       transform: translateX(-50%);
-      box-shadow: 0 8px 20px rgba(230, 180, 50, 0.3);
-      border: 3px solid #f0c040;
+      box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+    }
+
+    .rose-flower::before {
+      content: '';
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      background: #ff7aa3;
+      border-radius: 50%;
+      top: 10px;
+      left: 10px;
+    }
+
+    .rose-flower::after {
+      content: '';
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      background: #ff9ec0;
+      border-radius: 50%;
+      top: 28px;
+      left: 28px;
+    }
+
+    .rose-center {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: #ff2e63;
+      border-radius: 50%;
+      top: 51px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 2;
     }
 
-    .chick-head {
-      width: 95px;
-      height: 85px;
-      background: #ffe566;
-      border-radius: 50%;
-      position: absolute;
-      top: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 3px solid #f0c040;
-      z-index: 3;
-      box-shadow: 0 6px 15px rgba(230, 180, 50, 0.25);
-    }
-
-    .eye {
-      position: absolute;
-      width: 16px;
-      height: 20px;
-      background: #5c3a1e;
-      border-radius: 50%;
-      top: 32px;
-    }
-    .eye.left { left: 22px; }
-    .eye.right { right: 22px; }
-
-    .eye::after {
-      content: '';
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-      top: 3px;
-      left: 3px;
-    }
-
-    .blush {
-      position: absolute;
-      width: 20px;
-      height: 12px;
-      background: #ffb6c1;
-      border-radius: 50%;
-      top: 50px;
-      opacity: 0.8;
-    }
-    .blush.left { left: 8px; }
-    .blush.right { right: 8px; }
-
-    .beak {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 12px solid #ff9f43;
-      top: 52px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .wing {
-      position: absolute;
-      width: 35px;
-      height: 45px;
-      background: #ffd93d;
-      border-radius: 50% 50% 40% 40%;
-      top: 70px;
-      border: 2px solid #f0c040;
-      z-index: 1;
-    }
-    .wing.left {
-      left: 8px;
-      transform: rotate(-25deg);
-    }
-    .wing.right {
-      right: 8px;
-      transform: rotate(25deg);
-    }
-
-    .leg {
+    .stem {
       position: absolute;
       width: 8px;
-      height: 22px;
-      background: #ff9f43;
-      bottom: 5px;
+      height: 70px;
+      background: #4caf50;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       border-radius: 4px;
     }
-    .leg.left { left: 55px; }
-    .leg.right { right: 55px; }
 
-    .foot {
+    .leaf {
       position: absolute;
-      width: 18px;
-      height: 8px;
-      background: #ff9f43;
-      border-radius: 4px;
-      bottom: -2px;
-      left: -5px;
+      width: 35px;
+      height: 20px;
+      background: #66bb6a;
+      border-radius: 50% 0;
+      bottom: 35px;
+    }
+    .leaf.left {
+      left: 35px;
+      transform: rotate(-30deg);
+    }
+    .leaf.right {
+      right: 35px;
+      transform: rotate(30deg) scaleX(-1);
     }
 
     .page-title {
       font-family: 'Pacifico', cursive;
       font-size: 1.8rem;
-      color: #e67e22;
+      color: #e91e63;
       text-align: center;
       margin-bottom: 20px;
     }
@@ -255,9 +214,9 @@
     .photo-box {
       width: 100%;
       aspect-ratio: 1 / 1;
-      background: #fff3e0;
+      background: #fff0f5;
       border-radius: 16px;
-      border: 3px dashed #ffd8a8;
+      border: 3px dashed #ffb6c1;
       overflow: hidden;
       position: relative;
     }
@@ -275,15 +234,15 @@
     }
 
     .letter-box {
-      background: #fff8e7;
+      background: #fff0f5;
       border-radius: 20px;
       padding: 22px;
-      border: 2px solid #ffe0b2;
+      border: 2px solid #ffc0d0;
       flex: 1;
       overflow-y: auto;
       line-height: 1.7;
       font-size: 1rem;
-      color: #8b5e3c;
+      color: #9b4b6c;
     }
 
     .letter-box p {
@@ -302,7 +261,7 @@
     .final-message h2 {
       font-family: 'Pacifico', cursive;
       font-size: 2rem;
-      color: #e67e22;
+      color: #e91e63;
       margin-bottom: 15px;
     }
 
@@ -324,7 +283,7 @@
     }
 
     .nav button {
-      background: #e67e22;
+      background: #e91e63;
       color: white;
       border: none;
       padding: 12px 22px;
@@ -333,17 +292,17 @@
       font-weight: 600;
       font-size: 0.95rem;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(230, 126, 34, 0.3);
+      box-shadow: 0 6px 18px rgba(233, 30, 99, 0.3);
       transition: all 0.3s ease;
     }
 
     .nav button:hover {
-      background: #d35400;
+      background: #c2185b;
       transform: translateY(-2px);
     }
 
     .nav button:disabled {
-      background: #f5cba7;
+      background: #f8bbd0;
       cursor: not-allowed;
       transform: none;
       box-shadow: none;
@@ -364,12 +323,12 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #f5d0a9;
+      background: #f8bbd0;
       transition: all 0.3s;
     }
 
     .dot.active {
-      background: #e67e22;
+      background: #e91e63;
       transform: scale(1.3);
     }
 
@@ -381,20 +340,20 @@
       height: 42px;
       border-radius: 50%;
       background: white;
-      border: 2px solid #ffe0b2;
+      border: 2px solid #ffc0d0;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       font-size: 1.2rem;
       z-index: 30;
-      box-shadow: 0 4px 12px rgba(200, 140, 80, 0.2);
+      box-shadow: 0 4px 12px rgba(200, 100, 140, 0.2);
     }
 
     #passwordInput {
       padding: 14px 20px;
       border-radius: 50px;
-      border: 2px solid #ffd8a8;
+      border: 2px solid #ffb6c1;
       font-size: 1.1rem;
       text-align: center;
       width: 220px;
@@ -404,7 +363,7 @@
 
     #unlockBtn {
       margin-top: 20px;
-      background: #e67e22;
+      background: #e91e63;
       color: white;
       border: none;
       padding: 12px 30px;
@@ -436,24 +395,18 @@
 
     <!-- Página 1 -->
     <div class="page cover active" id="page1">
-      <div class="chick">
-        <div class="wing left"></div>
-        <div class="wing right"></div>
-        <div class="chick-body"></div>
-        <div class="chick-head">
-          <div class="eye left"></div>
-          <div class="eye right"></div>
-          <div class="blush left"></div>
-          <div class="blush right"></div>
-          <div class="beak"></div>
+      <div class="rose">
+        <div class="rose-flower">
+          <div class="rose-center"></div>
         </div>
-        <div class="leg left"><div class="foot"></div></div>
-        <div class="leg right"><div class="foot"></div></div>
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
       </div>
       
       <h1>Para ti</h1>
-      <p class="subtitle">Un pequeño detalle lleno de cariño 🐥</p>
-      <p style="font-size: 0.95rem; color: #d4a373;">Desliza o usa los botones</p>
+      <p class="subtitle">Un pequeño detalle lleno de cariño 🌹</p>
+      <p style="font-size: 0.95rem; color: #d17a9a;">Desliza o usa los botones</p>
     </div>
 
     <!-- Página 2 -->
@@ -473,8 +426,8 @@
           <img src="nosotros4.jpg" alt="Foto 4">
         </div>
       </div>
-      <p style="text-align: center; font-size: 0.9rem; color: #d4a373; margin-top: 15px;">
-        Cada foto guarda un pedacito de nosotros 💛
+      <p style="text-align: center; font-size: 0.9rem; color: #d17a9a; margin-top: 15px;">
+        Cada foto guarda un pedacito de nosotros 💕
       </p>
     </div>
 
@@ -495,8 +448,8 @@
       <div class="final-message">
         <h2>Te quiero</h2>
         <p>Que nunca se te olvide lo especial que eres para mí y siempre estare para ti.</p>
-        <p style="margin-top: 25px; font-size: 2.5rem;">🐥💛🐥</p>
-        <p style="margin-top: 20px; font-size: 0.95rem; color: #d4a373;">
+        <p style="margin-top: 25px; font-size: 2.5rem;">🌹💕🌹</p>
+        <p style="margin-top: 20px; font-size: 0.95rem; color: #d17a9a;">
           Hecho con cariño para ti
         </p>
       </div>
@@ -506,7 +459,7 @@
     <div class="page" id="page5">
       <h2 class="page-title">Secreto</h2>
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-        <p style="margin-bottom: 25px; font-size: 1.1rem; color: #8b5e3c;">
+        <p style="margin-bottom: 25px; font-size: 1.1rem; color: #9b4b6c;">
           Esta página está protegida<br>
           Escribe la contraseña para continuar
         </p>
@@ -515,35 +468,36 @@
         
         <button id="unlockBtn">Desbloquear</button>
         
-        <p id="errorMsg" style="color: #e74c3c; margin-top: 15px; display: none;">
+        <p id="errorMsg" style="color: #e91e63; margin-top: 15px; display: none;">
           Contraseña incorrecta
         </p>
       </div>
     </div>
 
-  <!-- Página 6: Mensaje especial -->
-<div class="page" id="page6">
-  <h2 class="page-title" style="margin-bottom: 12px;">Gracias por todo</h2>
+    <!-- Página 6: Mensaje especial -->
+    <div class="page" id="page6">
+      <h2 class="page-title" style="margin-bottom: 12px;">Gracias por todo</h2>
 
-  <div style="
-    flex: 1;
-    overflow-y: auto;
-    background: #fff8e7;
-    border-radius: 18px;
-    padding: 18px;
-    border: 2px solid #ffe0b2;
-    margin-bottom: 15px;
-    line-height: 1.7;
-    font-size: 0.98rem;
-    color: #8b5e3c;
-  ">
-    <p style="margin-bottom: 0;">
-      君を失うことは、想像以上に辛いことです。君なしでは生きていけない――今、そのことを痛感しています。今の僕は以前の自分とは変わってしまい、もうこれ以上前に進めない、あるいは自分の人生を立て直せないような気がしています。君と離れていることに耐えられません。君のそばにいて、やり直して、すべてを修復したいのです。自分がより良い人間になった姿を君に見せたい。君を傷つけたくなんてない――ただ君を幸せにし、支えたいだけなんです。良い時も悪い時も、どんな時だって君と一緒にいたい。君の成し遂げたことを一つひとつ、共に喜び合いたいのです。君なしでは生きていけません。心は死んでしまいそうです。君こそが僕の人生でたった一人の女性であってほしい――運命の相手は君だと分かっています――でも、無理やり引き止めることはできません。君がいなくて、本当に寂しいです。
-    </p>
-  </div>
+      <div style="
+        flex: 1;
+        overflow-y: auto;
+        background: #fff0f5;
+        border-radius: 18px;
+        padding: 18px;
+        border: 2px solid #ffc0d0;
+        margin-bottom: 15px;
+        line-height: 1.7;
+        font-size: 0.98rem;
+        color: #9b4b6c;
+      ">
+        <p style="margin-bottom: 0;">
+          君を失うことは、想像以上に辛いことです。君なしでは生きていけない――今、そのことを痛感しています。今の僕は以前の自分とは変わってしまい、もうこれ以上前に進めない、あるいは自分の人生を立て直せないような気がしています。君と離れていることに耐えられません。君のそばにいて、やり直して、すべてを修復したいのです。自分がより良い人間になった姿を君に見せたい。君を傷つけたくなんてない――ただ君を幸せにし、支えたいだけなんです。良い時も悪い時も、どんな時だって君と一緒にいたい。君の成し遂げたことを一つひとつ、共に喜び合いたいのです。君なしでは生きていけません。心は死んでしまいそうです。君こそが僕の人生でたった一人の女性であってほしい――運命の相手は君だと分かっています――でも、無理やり引き止めることはできません。君がいなくて、本当に寂しいです。
+        </p>
+      </div>
 
-  <p style="text-align: center; font-size: 1.8rem; margin-bottom: 5px;">🐥💛</p>
-</div>
+      <p style="text-align: center; font-size: 1.8rem; margin-bottom: 5px;">🌹💕</p>
+    </div>
+
     <div class="dots">
       <div class="dot active" data-page="1"></div>
       <div class="dot" data-page="2"></div>
@@ -577,7 +531,7 @@
     let isUnlocked = false;
 
     // ← Cambia esta contraseña
-    const correctPassword = "venusymarte";
+    const correctPassword = "teamo";
 
     function showPage(n) {
       if (n === 6 && !isUnlocked) return;
@@ -668,5 +622,7 @@
       }
     });
   </script>
+</body>
+</html>
 </body>
 </html>
